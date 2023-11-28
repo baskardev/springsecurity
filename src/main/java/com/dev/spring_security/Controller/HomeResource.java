@@ -8,8 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class HomeResource {
 
-    @GetMapping("/home")
+    @GetMapping("/")
     private String returnHome(){
         return "home";
+    }
+
+    @GetMapping("/admin")
+    private String returnHomeAdmin(){
+        return "home admin";
+    }
+
+    @GetMapping("/user")
+    private String returnHomeUser(){
+        return "home user";
     }
 }
