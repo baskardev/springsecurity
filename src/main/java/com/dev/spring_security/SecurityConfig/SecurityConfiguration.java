@@ -21,8 +21,14 @@ public class SecurityConfiguration  {
     }
     @Bean
     public InMemoryUserDetailsManager userDetailsManager(){
-        UserDetails userDetails = User.withUsername("baskar").password(passwordEncoder().encode("password")).roles("USER").build();
-        return new InMemoryUserDetailsManager(userDetails);
+        UserDetails userDetails = User.withUsername("baskar")
+                .password(passwordEncoder().encode("password"))
+                .roles("USER").build();
+        UserDetails admin = User.withUsername("kumar")
+                .password(passwordEncoder().encode("password"))
+                .roles("ADMIN").build();
+
+        return new InMemoryUserDetailsManager(userDetails,admin);
     }
 
 }
