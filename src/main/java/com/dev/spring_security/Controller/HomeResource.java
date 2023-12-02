@@ -5,21 +5,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
 public class HomeResource {
-
     @GetMapping("/")
-    private String returnHome(){
+    private String returnHome() {
         return "home";
     }
 
     @GetMapping("/admin")
-    private String returnHomeAdmin(){
+    private String returnHomeAdmin() {
         return "home admin";
     }
 
     @GetMapping("/user")
-    private String returnHomeUser(){
+    private String returnHomeUser() {
         return "home user";
     }
 }
